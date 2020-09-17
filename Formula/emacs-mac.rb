@@ -20,6 +20,7 @@ class EmacsMac < Formula
   option "with-gnu-head-icon", "Using a Bold GNU Head icon by Aurélio A. Heckert"
   option "with-emacs-sexy-icon", "Using the Emacs Sexy icon by @picandocodigo"
   option "with-starter", "Build with a starter script to start emacs GUI from CLI"
+  option "with-xwidgets", "Build with xwidgets support via WebKit"
 
   # Update list from
   # https://raw.githubusercontent.com/emacsfodder/emacs-icons-project/master/icons.json
@@ -136,6 +137,7 @@ class EmacsMac < Formula
     ]
     args << "--with-modules" unless build.without? "modules"
     args << "--with-rsvg" if build.with? "rsvg"
+    args << "--with-xwidgets" if build.with? "xwidgets"
 
     icons_dir = buildpath/"mac/Emacs.app/Contents/Resources"
 
